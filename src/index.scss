@@ -1,0 +1,18 @@
+@import "./styles/variables";
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: $light-bg;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: $light-bg;
+  color: #333333;
+}
+
+body.dark-mode {
+  background-color: $dark-bg;
+  color: #ffffff;
+}
