@@ -1,0 +1,207 @@
+@import "../../../styles/variables";
+
+.sidebar {
+  width: 26rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-right: 1px solid #f1f5f9;
+  padding: 2.5rem 0; 
+
+  .dark-mode & {
+    background-color: $dark-bg;
+    border-right-color: #1f2937;
+  }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0 2.5rem;
+    margin-bottom: 4rem;
+
+    .logo-circle {
+      width: 3.2rem;
+      height: 3.2rem;
+      border: 4px solid #0ca89b;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .inner-dot {
+        width: 0.8rem;
+        height: 0.8rem;
+        background: #0ca89b;
+        border-radius: 50%;
+      }
+    }
+
+    .logo-text {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #0ca89b;
+      letter-spacing: -0.5px;
+    }
+  }
+
+  .sidebar-content {
+    flex: 1;
+    padding: 0 1.5rem;
+
+    .divider {
+      height: 1px;
+      background: #f1f5f9;
+      margin: 2.5rem 1rem;
+
+      .dark-mode & {
+        background: #1f2937;
+      }
+    }
+  }
+
+  .nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.2rem 1.5rem;
+    text-decoration: none;
+    color: #64748b; 
+    border-radius: 100px; 
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: #0ca89b;
+      background: rgba(12, 168, 155, 0.05);
+    }
+
+    &.active {
+      background: #e1f5f3; 
+      color: #0ca89b; 
+
+      .dark-mode & {
+        background: rgba(12, 168, 155, 0.15);
+      }
+    }
+
+    .status-dot {
+      width: 0.6rem;
+      height: 0.6rem;
+      background: #ff8c00; 
+      border-radius: 50%;
+      position: absolute;
+      left: 1rem;
+      top: 1.2rem;
+    }
+  }
+
+  .theme-toggle {
+    cursor: pointer;
+    margin-top: 1rem;
+    color: #64748b;
+    border: 1px dashed transparent;
+
+    &:hover {
+      color: #0ca89b;
+      border-color: rgba(12, 168, 155, 0.3);
+      background: rgba(12, 168, 155, 0.05);
+    }
+
+    .dark-mode & {
+      color: #94a3b8;
+      &:hover {
+        color: #0ca89b;
+        background: rgba(12, 168, 155, 0.1);
+      }
+    }
+
+    svg {
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    &:active svg {
+      transform: scale(0.8) rotate(15deg);
+    }
+  }
+
+  .divider {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+
+    .dark-mode & {
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+      background: #1f2937 !important;
+    }
+  }
+
+  .sidebar-user {
+    margin-top: auto;
+    padding: 2rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-top: 1px solid #f1f5f9;
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+
+      .avatar {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #ffcc00; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .details {
+        display: flex;
+        flex-direction: column;
+
+        .email {
+          font-size: 1.2rem;
+          color: #94a3b8;
+        }
+
+        .role {
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: #1e293b;
+          transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+
+          .dark-mode & {
+            color: #f1f5f9;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+          }
+        }
+      }
+    }
+
+    .chevron {
+      color: #1e293b;
+      .dark-mode & {
+        color: #94a3b8;
+      }
+    }
+  }
+}

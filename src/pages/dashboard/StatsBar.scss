@@ -1,0 +1,134 @@
+@import "../../styles/variables";
+
+.stats-bar-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem;
+  border-radius: 1.2rem;
+  background-color: $light-bg;
+
+  .dark-mode & {
+    background-color: $dark-card;
+  }
+
+  .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+
+    .stats-info-group {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+
+      .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        font-size: 1.3rem;
+
+        .label {
+          color: #9ca3af;
+        }
+        .value {
+          font-weight: 700;
+        }
+
+        .divider {
+          width: 1px;
+          height: 18px;
+          background-color: #e5e7eb;
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    .refresh-data {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  }
+
+  .severity-card-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 4rem;
+
+    .severity-card {
+      display: flex;
+      flex-direction: column;
+      max-width: fit-content;
+      gap: 1.5rem;
+
+      .heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .severity-type {
+          font-size: 1.6rem;
+          color: #9ca3af;
+          font-weight: 500;
+        }
+
+        .image-wrapper {
+          width: 3.4rem;
+          height: 3.4rem;
+          border-radius: 0.8rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &.critical {
+            background: #fdf2f8;
+            color: #db2777;
+          }
+          &.high {
+            background: #fff7ed;
+            color: #ea580c;
+          }
+          &.medium {
+            background: #fefce8;
+            color: #ca8a04;
+          }
+          &.low {
+            background: #eff6ff;
+            color: #2563eb;
+          }
+        }
+      }
+
+      .data {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1.5rem;
+
+        .data-value {
+          font-size: 3.2rem;
+          font-weight: 700;
+        }
+
+        .trend-group {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          .trend-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+}

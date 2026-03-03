@@ -1,0 +1,9 @@
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;      
+  overflow: hidden;   
+  box-sizing: border-box;
+  padding: 2rem;
+  gap: 2rem;
+}
