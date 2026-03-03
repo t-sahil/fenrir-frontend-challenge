@@ -1,0 +1,47 @@
+@import "../../styles/variables";
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $light-bg;
+
+  .dark-mode & { background-color: $dark-bg; }
+
+  .login-card {
+    background: white;
+    padding: 4rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 40rem;
+    text-align: center;
+
+    .dark-mode & { background: $dark-card; color: white; }
+
+    h2 { margin-bottom: 1rem; color: $primary-teal; }
+    p { margin-bottom: 3rem; font-size: 1.4rem; opacity: 0.7; }
+
+    input {
+      width: 100%;
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 0.6rem;
+      
+      .dark-mode & { background: #333; border-color: #444; color: white; }
+    }
+
+    button {
+      width: 100%;
+      padding: 1.2rem;
+      background: $primary-teal;
+      color: white;
+      border: none;
+      border-radius: 0.6rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}

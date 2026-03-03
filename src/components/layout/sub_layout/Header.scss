@@ -1,0 +1,79 @@
+@import "../../../styles/variables";
+
+.main-header {
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: $light-bg;
+
+  .dark-mode & {
+    background-color: $dark-bg;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .header-left {
+    span {
+      font-size: 1.4rem;
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    button {
+      font-size: 1.4rem;
+      font-weight: 600;
+      padding: 1rem 2.4rem;
+      border-radius: 1.2rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .export-report-btn {
+      background: transparent;
+      border: 1.5px solid #e2e8f0; 
+      color: #333;
+
+      &:hover {
+        background: #f8fafc;
+      }
+
+      .dark-mode & {
+        border-color: #ffffff;
+        color: #ffffff;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.05);
+        }
+      }
+    }
+
+    .stop-scan-btn {
+      background-color: #fef2f2; 
+      border: 1.5px solid #fee2e2;
+      color: #ef4444;
+
+      &:hover {
+        background-color: #fee2e2;
+      }
+
+      .dark-mode & {
+        background-color: rgba(220, 38, 38, 0.1); 
+        border: 1.5px solid rgba(220, 38, 38, 0.2);
+        color: #f87171;
+
+        &:hover {
+          background-color: rgba(220, 38, 38, 0.2);
+        }
+      }
+    }
+  }
+}
