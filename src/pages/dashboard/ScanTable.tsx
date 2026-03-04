@@ -2,8 +2,10 @@ import { Columns3, ListFilter, Plus, Search } from 'lucide-react';
 import { MOCK_SCANS } from '../../data/mockData';
 import { useState } from 'react';
 import './ScanTable.scss';
+import { useNavigate } from 'react-router-dom';
 
 const ScanTable = () => {
+    const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState("");
 
     const filteredScans = MOCK_SCANS.filter((scan) => {
@@ -54,7 +56,7 @@ const ScanTable = () => {
         <tbody>
           { filteredScans.length > 0 ? (
               filteredScans.map((scan) => (
-                <tr key={scan.id}>
+                <tr key={scan.id} className="clickable-row" onClick={() => navigate(`/scan/${scan.id}`)}>
                   <td className="bold">{scan.name}</td>
                   <td className="text-secondary">{scan.type}</td>
                   <td>

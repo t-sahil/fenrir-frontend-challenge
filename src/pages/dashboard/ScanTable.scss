@@ -137,6 +137,15 @@
       width: 100%;
       border-collapse: collapse;
 
+      .clickable-row {
+        cursor: pointer; 
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: rgba(12, 168, 155, 0.05);
+        }
+      }
+
       .text-center {
         text-align: center;
       }

@@ -1,10 +1,16 @@
+import { ChevronRight, Home } from 'lucide-react';
 import './Header.scss';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <header className="main-header">
-      <div className="header-left">
-        <span>Scan</span>
+      <div className="breadcrumbs">
+        <span>Scan</span> <ChevronRight size={14} /> 
+        <Home size={14} onClick={() => navigate('/dashboard')} style={{cursor:'pointer'}} /> 
+        <ChevronRight size={14} /> <span>New Scan</span>
       </div>
       
       <div className="header-right">
