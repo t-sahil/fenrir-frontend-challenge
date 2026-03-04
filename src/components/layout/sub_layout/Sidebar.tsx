@@ -1,11 +1,20 @@
-import { NavLink } from 'react-router-dom';
-import { Grid, Folder, Shield, Calendar, Bell, Settings, HelpCircle, ChevronRight, Moon, Sun, User } from 'lucide-react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { Grid, Folder, Shield, Calendar, Bell, Settings, HelpCircle, ChevronRight, Moon, Sun, User, LogOut } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 import { useTheme } from '../../../context/ThemeContext';
 import './Sidebar.scss';
 
 const Sidebar = () => {
   const { theme, toggleTheme } = useTheme();
+  const navigate = useNavigate();
+
+  const userEmail = localStorage.getItem('userEmail') || 'admin@edu.com';
+
+  const handleLogout = () => {
+    localStorage.removeItem('isAuthenticated');
+    navigate('/login');
+    toast.success('Logged out successfully');
+  };
 
   const handleUnderConstruction = (e: React.MouseEvent, path: string) => {
     const readyPages = ['/dashboard', '/scans'];
@@ -78,6 +87,11 @@ const Sidebar = () => {
             {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
             <span>{theme === 'light' ? 'Dark Mode' : 'Light Mode'}</span>
           </div>
+
+          <div className="nav-item logout-item" onClick={handleLogout}>
+            <LogOut size={20} color="#ff4d4d" />
+            <span style={{ color: '#ff4d4d' }}>Logout</span>
+          </div>
         </nav>
       </div>
 
@@ -87,7 +101,7 @@ const Sidebar = () => {
             <User size={24} className="img" />
           </div>
           <div className="details">
-            <span className="email">admin@edu.com</span>
+            <span className="email">{userEmail}</span>
             <span className="role">Security Lead</span>
           </div>
         </div>

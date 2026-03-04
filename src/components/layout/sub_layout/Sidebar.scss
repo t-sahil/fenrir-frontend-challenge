@@ -107,7 +107,6 @@
 
   .theme-toggle {
     cursor: pointer;
-    margin-top: 1rem;
     color: #64748b;
     border: 1px dashed transparent;
 
@@ -131,6 +130,16 @@
 
     &:active svg {
       transform: scale(0.8) rotate(15deg);
+    }
+  }
+
+  .logout-item {
+    margin-top: auto;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    
+    &:hover {
+      background-color: rgba(255, 77, 77, 0.1) !important;
     }
   }
 
