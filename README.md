@@ -1,4 +1,4 @@
-# Project X – Technical Task
+# Technical Task
 
 Frontend challenge submission for Fenrir Security.  
 Recreated the provided design using a clean, component-based architecture.
