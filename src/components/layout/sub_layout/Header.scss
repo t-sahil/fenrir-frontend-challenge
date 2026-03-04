@@ -14,9 +14,14 @@
     border-bottom-color: rgba(255, 255, 255, 0.1);
   }
 
-  .header-left {
-    span {
-      font-size: 1.4rem;
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.4rem;
+
+    span:last-child {
+      font-weight: 500;
     }
   }
 
@@ -39,7 +44,7 @@
 
     .export-report-btn {
       background: transparent;
-      border: 1.5px solid #e2e8f0; 
+      border: 1.5px solid #e2e8f0;
       color: #333;
 
       &:hover {
@@ -57,7 +62,7 @@
     }
 
     .stop-scan-btn {
-      background-color: #fef2f2; 
+      background-color: #fef2f2;
       border: 1.5px solid #fee2e2;
       color: #ef4444;
 
@@ -66,7 +71,7 @@
       }
 
       .dark-mode & {
-        background-color: rgba(220, 38, 38, 0.1); 
+        background-color: rgba(220, 38, 38, 0.1);
         border: 1.5px solid rgba(220, 38, 38, 0.2);
         color: #f87171;
 
